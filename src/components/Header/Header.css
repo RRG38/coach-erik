@@ -1,4 +1,21 @@
-.material-icons.orange.unique {
-   font-size: 20px;
-   color: rgb(211, 37, 37)
+.header-parent {
+  background-color:black;
+  display: flex
+}
+
+.email {
+  color: white;
+}
+
+.menu-button {
+  background-color: white;
+  color: black
+}
+.material-icons.menu-icon {
+   font-size: 48px;
+   color: black
  }
+
+.title {
+  color: white;
+}
