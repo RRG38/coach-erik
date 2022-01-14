@@ -7,8 +7,8 @@ import Lift from './components/Lift/Lift'
 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     this.state = {
       pastLifts: []
@@ -19,7 +19,7 @@ class App extends Component {
     this.deleteLift = this.deleteLift.bind(this)
   }
 
-  //  commented out GET console error 404
+
   componentDidMount() {
     axios
       .get('/api/lifts')
@@ -42,14 +42,13 @@ class App extends Component {
     })
   }
 
-  updateLift(id, name, reps, sets, weight, date) {
+  updateLift(id, name, reps, sets, weight) {
     const newLift = {
       id: id,
       name: name,
       reps: reps,
       sets: sets,
-      weight: weight,
-      date: date
+      weight: weight
     }
     axios
       .put(`/api/lifts?id=${id}`, newLift)
@@ -86,8 +85,8 @@ class App extends Component {
               sets={lift.set}
               date={this.date}
               weight={lift.weight}
-              updateLiftFn={this.updatePost}
-              deletePostFn={this.deletePost}
+              updateLiftFn={this.updateLift}
+              deleteLiftFn={this.deleteLift}
             />
           ))}
         </section>

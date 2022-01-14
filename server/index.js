@@ -7,6 +7,7 @@ const PORT = 3838;
 
 app.use(express.json());
 
+
 app.get("/api/lifts", liftsController.read);
 app.post("/api/lifts", liftsController.create);
 app.put("/api/lifts/:id", liftsController.update);

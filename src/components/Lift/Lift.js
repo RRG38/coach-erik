@@ -9,22 +9,46 @@ class Lift extends Component {
     this.state = {
       viewLift: false
     }
+
+    this.hideEdit = this.hideEdit.bind(this)
+    this.showEdit = this.showEdit.bind(this)
   }
-  //This puts the post into EDIT mode when the EDIT button is clicked from the drop-down
+
   showEdit() {
     this.setState({ viewLift: true});
   }
 
-  // This puts the post back into normal viewing mode when the back to entries  button is clicked
-  // This method is passed down to the <Edit /> component via props
   hideEdit() {
     this.setState({ viewLift: false });
   }
 
   render() {
+    const { editing } = this.state
+
     return(
-      <div className='lift-parent'>
-        <p> My Past Lifting Entries: </p>
+      <div>
+        <div ClassName='lift-parent' onClick={this.hideEdit}></div>
+        <div>{this.props.date}</div>
+        <div>{this.props.name}</div>
+        <div ClassName='lift-parent' onClick={this.hideEdit}/>
+        <div className="lift-content">
+          {
+            editing ? (
+              <Edit
+                name={this.props.name}
+                reps={this.props.reps}
+                sets={this.props.sets}
+                weight={this.props.weight}
+                hideEdit={this.hideEdit}
+                updateLiftFn={this.props.updateLift}
+                deleteLiftFn={this.props.deleteLift}
+                id={this.props.id}
+              />
+            ) : (
+              <div className="lift-date">{this.props.name}</div>
+            )
+          }
+        </div>
       </div>
     )
   }
