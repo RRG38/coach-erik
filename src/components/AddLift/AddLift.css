@@ -3,6 +3,7 @@
   color: white;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-direction: column;
   width: 300px;
   height: 340px;
@@ -11,6 +12,12 @@
 }
 
 ::placeholder {
-  font-size: 10px;
+  font-size: 11px;
   font-style: italic;
+}
+
+.inputs {
+  width: 200px;
+  font-size: 20px;
+  padding: 5px 5px;
 }

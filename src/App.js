@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import AddLift from './components/AddLift/AddLift'
 import Lift from './components/Lift/Lift'
 
+
 class App extends Component {
   constructor(props) {
     super(props)
