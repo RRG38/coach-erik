@@ -15,9 +15,10 @@ class AddLift extends Component {
       <div className='addlift-parent'>
         <div>New Lifting Entry:</div>
         <input placeholder='Enter Name of Lift'></input>
-        <input></input>
-        <input></input>
-        <input></input>
+        <input placeholder='Enter Number of Repititions'></input>
+        <input placeholder='Enter Number of Sets Completed'></input>
+        <input placeholder='Enter Weights Used (lbs.) if applicable'></input>
+        <button> SUBMIT </button>
       </div>
     )
   }

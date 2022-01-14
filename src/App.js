@@ -3,6 +3,7 @@ import axios from "axios";
 import "./assets/App.css";
 import Header from "./components/Header/Header";
 import AddLift from './components/AddLift/AddLift'
+import Lift from './components/Lift/Lift'
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <AddLift />
+        <Lift />
       </div>
     )
   }

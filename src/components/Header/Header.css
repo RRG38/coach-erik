@@ -1,6 +1,7 @@
 .header-parent {
   background-color:black;
-  display: flex
+  display: flex;
+  width: 320px;
 }
 
 .email {
