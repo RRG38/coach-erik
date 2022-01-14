@@ -1,4 +1,4 @@
-//set up just need to change some of variables below
+
 
 let lifts = [];
 let id = 0;
@@ -8,23 +8,26 @@ module.exports = {
     res.status(200).send(lifts);
   },
   create: (req, res, next) => {
-    const { text, time } = req.body;
-    lifts.push({ id, text, time });
+    const { name, reps, sets, weight, date } = req.body;
+    lifts.push({ id, name, reps, sets, weight, date });
     id++;
     res.status(200).send(lifts);
   },
   update: (req, res) => {
-    const { text } = req.body;
+    const { name, reps, sets, weight, date } = req.body;
     const updateID = req.params.id;
-    const messageIndex = lifts.findIndex(
-      (message) => message.id == updateID
+    const liftIndex = lifts.findIndex(
+      (lifts) => lifts.id == updateID
     );
-    let message = lifts[messageIndex];
+    let lift = lifts[liftIndex];
 
-    lifts[messageIndex] = {
-      id: message.id,
-      text: text || message.text,
-      time: message.time,
+    lifts[liftIndex] = {
+      id: lift.id,
+      name: name || lift.name,
+      reps: reps || lift.reps,
+      sets: sets || lift.sets,
+      weight: weight || lift.weight,
+      date: date || lift.date
     };
 
     res.status(200).send(lifts);

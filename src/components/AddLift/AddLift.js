@@ -7,14 +7,19 @@ class AddLift extends Component {
   constructor(props) {
     super(props)
 
+    let reactDate = new DateObject()
+    let date = reactDate.format('MM/DD/YYYY')
+
+
+
     this.state = {
       name: '',
       reps: '',
       sets: '',
       weight: '',
-      date: ''
+      date: date
     }
-
+    console.log(this.state)
     this.createEntry = this.createEntry.bind(this)
   }
 
@@ -32,18 +37,20 @@ class AddLift extends Component {
 
   inputWeight( weight ) {
     this.setState({ weight })
+    console.log(this.state)
   }
 
+
   createEntry() {
-    let reactDate = new DateObject()
-    let date = reactDate.format('MM/DD/YYYY')
-    this.setState({date: date})
-    console.log(this.state) //ask Garrett why I have to click submit twice for the date to be added to state
+
+    //ask Garrett why I have to click submit twice for the date to be added to state, changed but ask how it's working
+    this.props.createLiftEntry(this.state)
     this.setState({
       name: '',
       reps: '',
       sets: '',
-      weight: ''
+      weight: '',
+      date: ''
     })
   }
 
